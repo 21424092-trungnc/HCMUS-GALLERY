@@ -1,3 +1,49 @@
 <resources>
-    <string name="app_name">HCMUS Gallery</string>
+    <string name="app_name">HCMUS GALLERY</string>
+    <string name="picture">Hình ảnh</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="share">Chia sẻ</string>
+    <string name="gallery">Thư viện</string>
+    <string name="slideshow">Trình chiếu</string>
+    <string name="add">Thêm mới</string>
+    <string name="delete">Xóa</string>
+    <string name="information">Thông tin</string>
+    <string name="hide_photo">Ẩn/Hiện hình ảnh</string>
+    <string name="photo">Hình ảnh</string>
+    <string name="album">Album</string>
+    <string name="favorite">Yêu thích</string>
+    <string name="advance_search">Tìm kiếm nâng cao</string>
+    <string name="camera">Máy ảnh</string>
+    <string name="edit_photo">Chỉnh sửa</string>
+    <string name="add_to_favorite">Thêm vào mục yêu thích</string>
+    <string name="anti_clockspin_transformation" translatable="false">ANTI CLOCKSPIN TRANSFORMATION</string>
+    <string name="zoom_out_transformation" translatable="false">ZOOM OUT TRANSFORMATION</string>
+    <string name="depth_transformation" translatable="false">DEPTH TRANSFORMATION</string>
+    <string name="settings">Cài đặt</string>
+    <string name="set_wallpaper">Cài đặt hình nền</string>
+    <string name="multi_create_album">Tạo Album</string>
+    <string name="choose">Chọn</string>
+    <string name="addAlbum">Thêm vào Album</string>
+    <string name="multiSelect">Chọn nhiều</string>
+    <string name="add_image">Thêm hình ảnh</string>
+    <string name="move_image">Di chuyển</string>
+    <string name="restore">Khôi phục</string>
+    <string name="create_album">Tạo Album</string>
+    <string name="gif">Tạo ảnh Gif</string>
+    <string name="listGif">GIF</string>
+    <string name="add_title">Thêm tiêu đề</string>
+    <string name="enter">Đồng ý</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="exif_data">Thông tin</string>
+    <string name="name">Tên</string>
+    <string name="producer">Nhà sản xuất</string>
+    <string name="model">Loại thiết bị</string>
+    <string name="size">Kích thước</string>
+    <string name="focal_length">Tiêu cự</string>
+    <string name="flash">Flash</string>
+    <string name="author">Tác giả</string>
+    <string name="unknown">Không rõ</string>
+    <string name="duplicate_images">Sao chép hình ảnh</string>
+    <string name="search_results">Kết quả tìm kiếm</string>
+    <string name="insert_to_search">Nhập từ khóa...</string>
 </resources>
