@@ -18,11 +18,9 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>{
     private Context context;
     private List<Category> listCategory;
-
     public CategoryAdapter(Context context) {
         this.context = context;
     }
-
     public void setData(List<Category> listCategory){
         this.listCategory = listCategory;
         notifyDataSetChanged();
@@ -40,18 +38,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         Category category = listCategory.get(position);
         if (category == null)
             return;
-
         holder.tvNameCategory.setText(category.getNameCategory());
-
         GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 3);
         holder.rcvPictures.setLayoutManager(gridLayoutManager);
-
         ImageAdapter girlAdapter = new ImageAdapter(context.getApplicationContext());
         girlAdapter.setData(category.getListGirl());
         girlAdapter.setListCategory(listCategory);
         holder.rcvPictures.setAdapter(girlAdapter);
-
-
     }
 
     @Override

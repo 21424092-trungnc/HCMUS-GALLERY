@@ -43,7 +43,6 @@ public class SlideShowActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     private void setUpToolBar() {

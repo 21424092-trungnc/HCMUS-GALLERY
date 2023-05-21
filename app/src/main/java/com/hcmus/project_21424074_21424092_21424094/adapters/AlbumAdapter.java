@@ -46,8 +46,6 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
     @Override
     public AlbumViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_album, parent, false);
-
-
         return new AlbumViewHolder(view);
     }
 
@@ -105,7 +103,6 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
                 @Override
                 public boolean onLongClick(View view) {
                     openBottomDialog();
-
                     txtPath.setText(ref.getPathFolder());
                     txtPath.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -130,7 +127,6 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
                     return true;
                 }
             });
-
         }
 
         private void bindData(Album ref) {
@@ -168,8 +164,6 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
             layout_bottom_delete = viewDialog.findViewById(R.id.layout_bottom_delete);
             layout_bottom_slide_show = viewDialog.findViewById(R.id.layout_bottom_slide_show);
             txtPath = viewDialog.findViewById(R.id.txtPath);
-
-
             bottomSheetDialog = new BottomSheetDialog(context);
             bottomSheetDialog.setContentView(viewDialog);
             bottomSheetDialog.show();

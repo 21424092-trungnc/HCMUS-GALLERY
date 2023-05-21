@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImageSelectAdapter extends RecyclerView.Adapter<ImageSelectAdapter.ImageSelectHolder> {
-
     private ListTransInterface listTransInterface;
     private List<Image> listImages;
     private Context context;
@@ -50,7 +49,6 @@ public class ImageSelectAdapter extends RecyclerView.Adapter<ImageSelectAdapter.
     @Override
     public ImageSelectHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_picture, parent, false);
-
         return new ImageSelectHolder(view);
     }
 
@@ -67,16 +65,15 @@ public class ImageSelectAdapter extends RecyclerView.Adapter<ImageSelectAdapter.
         holder.imgPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    if (holder.imgPhoto.getImageAlpha() == 100) {
-                        holder.imgPhoto.setImageAlpha(255);
-                        listTransInterface.removeList(image);
-                    } else if (holder.imgPhoto.getImageAlpha() == 255) {
-                        holder.imgPhoto.setImageAlpha(100);
-                        listTransInterface.addList(image);
-                    }
+                if (holder.imgPhoto.getImageAlpha() == 100) {
+                    holder.imgPhoto.setImageAlpha(255);
+                    listTransInterface.removeList(image);
+                } else if (holder.imgPhoto.getImageAlpha() == 255) {
+                    holder.imgPhoto.setImageAlpha(100);
+                    listTransInterface.addList(image);
+                }
             }
         });
-
     }
 
     @Override

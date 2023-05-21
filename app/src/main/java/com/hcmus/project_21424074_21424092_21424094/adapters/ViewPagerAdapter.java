@@ -27,9 +27,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
 
     public ViewPagerAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
-
     }
-
     @NonNull
     @Override
     public Fragment createFragment(int position) {
@@ -44,10 +42,9 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
                 return null;
         }
     }
-
     @Override
     public int getItemCount() {
-        return 4;
+        return 3;
     }
 
 

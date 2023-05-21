@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Hide status bar
-        /*getSupportActionBar();*/
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.bottom_nav);
         viewPager = findViewById(R.id.view_pager);
@@ -36,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 switch (item.getItemId()) {
                     case R.id.photo:
                         viewPager.setCurrentItem(0);
@@ -65,12 +62,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageScrollStateChanged(int state) {
                 super.onPageScrollStateChanged(state);
-
             }
 
             @Override
             public void onPageSelected(int position) {
-
                 switch (position){
                     case 0:
                         bottomNavigationView.getMenu().findItem(R.id.photo).setChecked(true);

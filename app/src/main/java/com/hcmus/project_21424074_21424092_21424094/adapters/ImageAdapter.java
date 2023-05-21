@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
-
     private List<Image> listImages;
     private Context context;
     private List<Category> listCategory;
@@ -32,8 +31,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public ImageAdapter(Context context) {
         this.context = context;
     }
-
-
     public ImageAdapter() {
     }
 
@@ -49,9 +46,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     @NonNull
     @Override
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_picture, parent, false);
-
         return new ImageViewHolder(view);
     }
 
@@ -74,7 +69,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 myAsyncTask.execute();
             }
         });
-
     }
 
     @Override
@@ -84,11 +78,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         return 0;
     }
 
-
-
     public class ImageViewHolder extends RecyclerView.ViewHolder {
         private ImageView imgPhoto;
-
         public ImageViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.imgPhoto);
@@ -97,14 +88,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
 
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object){
-
-        // Remove view
         container.removeView((View) object);
     }
 
     public class MyAsyncTask extends AsyncTask<Void, Integer, Void> {
         public int pos;
-
         public void setPos(int pos) {
             this.pos = pos;
         }

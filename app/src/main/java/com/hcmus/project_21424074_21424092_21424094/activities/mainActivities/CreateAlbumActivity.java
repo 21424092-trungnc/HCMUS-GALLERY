@@ -103,7 +103,7 @@ public class CreateAlbumActivity extends AppCompatActivity implements ListTransI
             File directtory = new File(albumPath);
             if(!directtory.exists()){
                 directtory.mkdirs();
-                Log.e("File-no-exist",directtory.getPath());
+                Log.e("Tệp không tồn tại",directtory.getPath());
             }
             String[] paths = new String[listImageSelected.size()];
             int i =0;

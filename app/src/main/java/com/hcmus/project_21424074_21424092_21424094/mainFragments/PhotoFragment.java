@@ -75,7 +75,6 @@ public class PhotoFragment extends Fragment {
         toolbar_photo = view.findViewById(R.id.toolbar_photo);
         toolBarEvents();
         setRyc();
-
         return view;
     }
 
@@ -139,7 +138,6 @@ public class PhotoFragment extends Fragment {
     }
 
     public class DupAsyncTask extends AsyncTask<Void, Integer, Void> {
-
         private ProgressDialog mProgressDialog ;
         List<String> list;
         @Override
@@ -189,7 +187,6 @@ public class PhotoFragment extends Fragment {
         Set set = map.keySet();
         for (Object key: set) {
             if(map.get(key).size() >=2){
-
                 result.addAll(map.get(key));
             }
         }
@@ -235,8 +232,8 @@ public class PhotoFragment extends Fragment {
             }
         }
 
-        if (listImageSearch.size() == 0){
-            Toast.makeText(getContext(), "Searched image not found", Toast.LENGTH_LONG).show();
+        if (listImageSearch.size() == 0) {
+            Toast.makeText(getContext(), "Không tìm thấy hình ảnh", Toast.LENGTH_LONG).show();
         } else {
             ArrayList<String> listStringImage = new ArrayList<>();
             for (Image image : listImageSearch) {
@@ -244,48 +241,20 @@ public class PhotoFragment extends Fragment {
             }
             Intent intent = new Intent(context, ItemAlbumActivity.class);
             intent.putStringArrayListExtra("data", listStringImage);
-//            intent.putExtra("name", title);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }
-
-
-
-
-//        CategoryAdapter categoryAdapter1 = new CategoryAdapter(getContext());
-//        Category category = new Category(listImageSearch);
-//        List<Category> categoryList = new ArrayList<>();
-//        categoryList.add(category);
-//
-//        categoryAdapter1.setData(categoryList);
-//        recyclerView.setAdapter(categoryAdapter1);
-//
-//        if (listImageSearch.size() != 0) {
-//            synchronized (PhotoFragment.this) {
-//                PhotoFragment.this.notifyAll();
-//            }
-//        } else {
-//            Toast.makeText(getContext(), "Searched image not found", Toast.LENGTH_LONG).show();
-//        }
     }
-
-
     private void actionSearchAdvanced() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(context);
         View view = getLayoutInflater().inflate(R.layout.layout_dialog_search_advanced, null);
 
         dialog.setView(view);
-        dialog.setTitle("Advanced search");
-        dialog.setPositiveButton("Search", new DialogInterface.OnClickListener() {
+        dialog.setTitle("Tìm kiếm nâng cao");
+        dialog.setPositiveButton("Tìm kiếm", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 EditText edt_search_view = view.findViewById(R.id.edt_search_view);
-                //TextInputLayout searchViewField = view.findViewById(R.id.searchViewField);
-                //searchViewField.setError("Vui lòng nhập từ khóa để tìm kiếm");
-//                LabelAsyncTask labelAsyncTask = new LabelAsyncTask();
-//                labelAsyncTask.setTitle(edt_search_view.getText().toString());
-//                labelAsyncTask.execute();
-//                dialogInterface.cancel();
             }
         });
         dialog.show();
@@ -318,10 +287,9 @@ public class PhotoFragment extends Fragment {
         if (permissionCheckStorage != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_PERMISSION_CODE);
         } else {
-
             ContentValues values = new ContentValues();
-            values.put(MediaStore.Images.Media.TITLE, "New Picture");
-            values.put(MediaStore.Images.Media.DESCRIPTION, "From your Camera");
+            values.put(MediaStore.Images.Media.TITLE, "Ảnh mới");
+            values.put(MediaStore.Images.Media.DESCRIPTION, "Từ máy ảnh");
             imageUri = getActivity().getApplicationContext().getContentResolver().insert(
                     MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -330,7 +298,6 @@ public class PhotoFragment extends Fragment {
             // TODO Simply append one image to the allImages list. No need to loop through it.
             GetAllPhotoFromGallery.updateNewImages();
             GetAllPhotoFromGallery.refreshAllImages();
-
         }
     }
 
@@ -339,11 +306,11 @@ public class PhotoFragment extends Fragment {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == MY_CAMERA_PERMISSION_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getActivity(), "camera permission granted", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Máy ảnh không được cấp quyền", Toast.LENGTH_LONG).show();
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
             } else {
-                Toast.makeText(getActivity(), "camera permission denied", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Máy ảnh bị chặn truy cập quyền", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -372,7 +339,7 @@ public class PhotoFragment extends Fragment {
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_MULTI) {
             MyAsyncTask myAsyncTask = new MyAsyncTask();
             myAsyncTask.execute();
-            Toast.makeText(context, "Your image is hidden", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Hình ảnh của bạn đã được ẩn", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -409,7 +376,6 @@ public class PhotoFragment extends Fragment {
     }
 
     public class MyAsyncTask extends AsyncTask<Void, Integer, Void> {
-
         @Override
         protected Void doInBackground(Void... voids) {
             listImg = getListCategory();

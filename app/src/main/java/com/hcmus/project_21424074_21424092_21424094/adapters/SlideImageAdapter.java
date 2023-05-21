@@ -45,7 +45,6 @@ public class SlideImageAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-
         return view == object;
     }
 

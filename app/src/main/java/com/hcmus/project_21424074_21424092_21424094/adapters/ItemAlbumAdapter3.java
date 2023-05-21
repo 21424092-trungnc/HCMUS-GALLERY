@@ -22,7 +22,6 @@ public class ItemAlbumAdapter3 extends RecyclerView.Adapter<ItemAlbumAdapter3.It
     private ArrayList<String> album;
     private ImageView imgPhoto;
     private static int REQUEST_CODE_PIC = 10;
-
     public ItemAlbumAdapter3(ArrayList<String> album) {
         this.album = album;
     }
@@ -35,7 +34,6 @@ public class ItemAlbumAdapter3 extends RecyclerView.Adapter<ItemAlbumAdapter3.It
     @Override
     public ItemAlbumViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_picture_album_linear, parent, false);
-
         return new ItemAlbumViewHolder(view);
     }
 
@@ -50,9 +48,6 @@ public class ItemAlbumAdapter3 extends RecyclerView.Adapter<ItemAlbumAdapter3.It
             return album.size();
         return 0;
     }
-
-
-
     public class ItemAlbumViewHolder extends RecyclerView.ViewHolder {
         private Context context;
         public ItemAlbumViewHolder(@NonNull View itemView) {
@@ -70,7 +65,6 @@ public class ItemAlbumAdapter3 extends RecyclerView.Adapter<ItemAlbumAdapter3.It
                     intent.putStringArrayListExtra("data_list_path", album);
                     intent.putStringArrayListExtra("data_list_thumb", album);
                     intent.putExtra("pos", pos);
-
                     ((Activity)context).startActivityForResult(intent,REQUEST_CODE_PIC);
                 }
             });

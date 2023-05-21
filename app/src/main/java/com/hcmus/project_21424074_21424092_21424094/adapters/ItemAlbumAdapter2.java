@@ -34,7 +34,6 @@ public class ItemAlbumAdapter2 extends RecyclerView.Adapter<ItemAlbumAdapter2.It
     @Override
     public ItemAlbumViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_picture_album_span2, parent, false);
-
         return new ItemAlbumViewHolder(view);
     }
 
@@ -47,8 +46,6 @@ public class ItemAlbumAdapter2 extends RecyclerView.Adapter<ItemAlbumAdapter2.It
     public int getItemCount() {
         return album.size();
     }
-
-
 
     public class ItemAlbumViewHolder extends RecyclerView.ViewHolder {
         private Context context;

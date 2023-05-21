@@ -29,8 +29,6 @@ import com.hcmus.project_21424074_21424092_21424094.utility.GetAllPhotoFromGalle
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 public class AlbumFragment extends Fragment {
     private RecyclerView ryc_album;
     private List<Image> listImage;
@@ -55,7 +53,6 @@ public class AlbumFragment extends Fragment {
         eventsUpdateAlbum();
         setViewRyc();
         albumAdapter.setData(listAlbum);
-
         return view;
     }
 
@@ -81,7 +78,7 @@ public class AlbumFragment extends Fragment {
 
     private void eventSearch(@NonNull MenuItem item) {
         SearchView searchView = (SearchView) item.getActionView();
-        searchView.setQueryHint("Type to search");
+        searchView.setQueryHint("Nhập từ khóa tìm kiếm");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
@@ -99,11 +96,10 @@ public class AlbumFragment extends Fragment {
                         AlbumFragment.this.notifyAll();
                     }
                 } else {
-                    Toast.makeText(getContext(), "Searched album not found", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Không thấy album", Toast.LENGTH_LONG).show();
                 }
                 return false;
             }
-
             @Override
             public boolean onQueryTextChange(String s) {
                 return false;
@@ -111,7 +107,6 @@ public class AlbumFragment extends Fragment {
         });
 
         item.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
-
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
                 return true;
@@ -126,7 +121,6 @@ public class AlbumFragment extends Fragment {
                 return true;
             }
         });
-
     }
 
     private void eventsUpdateAlbum() {

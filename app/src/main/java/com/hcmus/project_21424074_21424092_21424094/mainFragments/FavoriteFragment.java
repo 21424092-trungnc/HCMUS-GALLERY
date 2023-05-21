@@ -31,13 +31,10 @@ import java.util.Set;
 
 public class FavoriteFragment extends Fragment {
     private RecyclerView recyclerView;
-
     private List<String> imageListPath;
-
     private List<Image> imageList;
     private Toolbar toolbar_favor;
     private Context context;
-
     private Set<String> imgListFavor;
     @Nullable
     @Override
@@ -50,7 +47,6 @@ public class FavoriteFragment extends Fragment {
         // Toolbar events
         toolbar_favor.inflateMenu(R.menu.menu_top_favor);
         toolbar_favor.setTitle(context.getResources().getString(R.string.favorite));
-
         toolbar_favor.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
@@ -63,31 +59,24 @@ public class FavoriteFragment extends Fragment {
                         slideShowEvents();
                         break;
                 }
-
                 return true;
             }
         });
 
         imageListPath = DataLocalManager.getListImg();
         imgListFavor=DataLocalManager.getListSet();
-        //imageList = getListImgFavor(imageListPath);;
         setRyc();
-
-
         return view;
     }
 
     private void setRyc() {
-
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
-
         recyclerView.setAdapter(new ItemAlbumAdapter(new ArrayList<>(imageListPath)));
-
     }
 
     private void eventSearch(@NonNull MenuItem item) {
         androidx.appcompat.widget.SearchView searchView = (androidx.appcompat.widget.SearchView) item.getActionView();
-        searchView.setQueryHint("Type to search");
+        searchView.setQueryHint("Nhập từ khóa tìm kiếm");
         searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
@@ -96,7 +85,6 @@ public class FavoriteFragment extends Fragment {
                     if (image.toLowerCase().contains(s.toLowerCase())) {
                         listImageSearch.add(image);
                     }
-
                 }
 
                 if (listImageSearch.size() != 0) {
@@ -104,8 +92,9 @@ public class FavoriteFragment extends Fragment {
                     synchronized (FavoriteFragment.this) {
                         FavoriteFragment.this.notifyAll();
                     }
-                } else {
-                    Toast.makeText(getContext(), "Searched image not found", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(getContext(), "Không tìm thấy image", Toast.LENGTH_LONG).show();
                 }
                 return false;
             }
@@ -117,12 +106,10 @@ public class FavoriteFragment extends Fragment {
         });
 
         item.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
-
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
                 return true;
             }
-
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
                 recyclerView.setAdapter(new ItemAlbumAdapter(new ArrayList<>(imageListPath)));
@@ -147,8 +134,6 @@ public class FavoriteFragment extends Fragment {
 
         DataLocalManager.setListImgByList(imageListPath);
         recyclerView.setAdapter(new ItemAlbumAdapter(new ArrayList<>(imageListPath)));
-        //FavoriteFragment.MyAsyncTask myAsyncTask = new FavoriteFragment.MyAsyncTask();
-        //myAsyncTask.execute();
     }
 
     private List<Image> getListImgFavor(List<String> imageListUri) {
@@ -161,11 +146,9 @@ public class FavoriteFragment extends Fragment {
                 }
             }
         }
-
         return listImageFavor;
     }
     public class MyAsyncTask extends AsyncTask<Void, Integer, Void>{
-
         @Override
         protected Void doInBackground(Void... voids) {
             imageListPath = DataLocalManager.getListImg();
@@ -175,7 +158,6 @@ public class FavoriteFragment extends Fragment {
                     imageListPath.remove(i);
                 }
             }
-
             DataLocalManager.setListImgByList(imageListPath);
             return null;
         }

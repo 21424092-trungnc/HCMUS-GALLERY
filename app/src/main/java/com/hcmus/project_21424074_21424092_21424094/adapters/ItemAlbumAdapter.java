@@ -22,11 +22,9 @@ public class ItemAlbumAdapter extends RecyclerView.Adapter<ItemAlbumAdapter.Item
     private ArrayList<String> album;
     private ImageView imgPhoto;
     private static int REQUEST_CODE_PIC = 10;
-
     public ItemAlbumAdapter(ArrayList<String> album) {
         this.album = album;
     }
-
     @SuppressLint("NotifyDataSetChanged")
     public void setData(ArrayList<String> album) {
         this.album = album;
@@ -37,7 +35,6 @@ public class ItemAlbumAdapter extends RecyclerView.Adapter<ItemAlbumAdapter.Item
     @Override
     public ItemAlbumViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_picture_album, parent, false);
-
         return new ItemAlbumViewHolder(view);
     }
 
@@ -50,7 +47,6 @@ public class ItemAlbumAdapter extends RecyclerView.Adapter<ItemAlbumAdapter.Item
     public int getItemCount() {
         return album.size();
     }
-
     public class ItemAlbumViewHolder extends RecyclerView.ViewHolder {
         private Context context;
 

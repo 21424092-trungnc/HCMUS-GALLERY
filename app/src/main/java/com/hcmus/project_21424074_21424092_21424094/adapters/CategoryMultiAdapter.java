@@ -44,19 +44,15 @@ public class CategoryMultiAdapter extends RecyclerView.Adapter<CategoryMultiAdap
         Category category = listCategory.get(position);
         if (category == null)
             return;
-
         holder.tvNameCategory.setText(category.getNameCategory());
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 3);
         holder.rcvPictures.setLayoutManager(gridLayoutManager);
-
         ImageSelectAdapter girlAdapter = new ImageSelectAdapter(context.getApplicationContext());
         girlAdapter.setListTransInterface(listTransInterface);
         girlAdapter.setData(category.getListGirl());
         girlAdapter.setListCategory(listCategory);
         holder.rcvPictures.setAdapter(girlAdapter);
-
-
     }
 
     @Override

@@ -90,8 +90,6 @@ public class AddImageToAlbumActivity extends AppCompatActivity implements ListTr
     }
     public class AddAlbumAsyncTask extends AsyncTask<Void, Integer, Void> {
         ArrayList<String> list;
-
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();

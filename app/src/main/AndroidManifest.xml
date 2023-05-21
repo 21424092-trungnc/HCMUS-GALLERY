@@ -29,9 +29,6 @@
         android:theme="@style/Theme.21424074_21424092_21424094">
 
         <activity
-            android:name=".activities.subActivities.GifShowActivity"
-            android:exported="true" />
-        <activity
             android:name=".activities.subActivities.MultiSelectImage"
             android:exported="true" />
         <activity
@@ -39,10 +36,10 @@
             android:exported="true" />
         <activity
             android:name=".activities.mainActivities.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

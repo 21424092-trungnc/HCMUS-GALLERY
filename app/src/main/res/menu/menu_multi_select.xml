@@ -15,11 +15,4 @@
         android:id="@+id/menuSlideshow"
         android:title="@string/slideshow"
         app:showAsAction="never"/>
-    <item
-        android:id="@+id/menuHide"
-        android:title="@string/hide_photo"
-        app:showAsAction="never"/>
-    <item android:id="@+id/menuGif"
-        android:title="@string/gif"
-        app:showAsAction="never"/>
 </menu>

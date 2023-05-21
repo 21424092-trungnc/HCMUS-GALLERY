@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class SlideShowAdapter extends SliderViewAdapter<SlideShowAdapter.SliderViewHolder> {
     private ArrayList<String> imageList;
-
     public void setData(ArrayList<String> imageList) {
         this.imageList = imageList;
         notifyDataSetChanged();
@@ -23,7 +22,6 @@ public class SlideShowAdapter extends SliderViewAdapter<SlideShowAdapter.SliderV
     public int getCount() {
         return imageList.size();
     }
-
     @Override
     public SliderViewHolder onCreateViewHolder(ViewGroup parent) {
         return new SliderViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_slide_show, parent, false));
@@ -42,7 +40,6 @@ public class SlideShowAdapter extends SliderViewAdapter<SlideShowAdapter.SliderV
             img_slide_show = itemView.findViewById(R.id.img_slide_show);
             context = itemView.getContext();
         }
-
         public void onbind(String img) {
             Glide.with(context).load(img).into(img_slide_show);
         }

@@ -39,14 +39,14 @@ public class GetAllPhotoFromGallery {
     }
 
     public static final List<Image> getAllImageFromGallery(Context context) {
-        Log.d("Simple-Gallery","GetAllPhotoFromGallery->getAllImageFromGallery()");
-        if(!allImagesPresent) { // Do not fetch photos between Activity switching.
-                                // MASSIVE performance improvement. Like over 9000.
+        Log.d("HCMUS GALLERY","GetAllPhotoFromGallery->getAllImageFromGallery()");
+        if(!allImagesPresent) {
+            // Do not fetch photos between Activity switching.
+            // MASSIVE performance improvement. Like over 9000.
             Uri uri;
             Cursor cursor;
             int columnIndexData, thumb, dateIndex;
             List<Image> listImage = new ArrayList<>();
-
             String absolutePathImage = null;
             String thumbnail = null;
             Long dateTaken = null;
@@ -59,7 +59,6 @@ public class GetAllPhotoFromGallery {
             };
 
             final String orderBy = MediaStore.Images.Media.DATE_TAKEN;
-
 
             cursor = context.getApplicationContext().getContentResolver().query(uri, projection, null, null, orderBy + " DESC");
             columnIndexData = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
@@ -100,13 +99,13 @@ public class GetAllPhotoFromGallery {
                         }
                     }
                     if(iscontained){
-                        Log.d("Simple-Gallery","GetAllPhotosFromGallery -> Image already in allImages. Breaking");
+                        Log.d("HCMUS - GALLERY","GetAllPhotosFromGallery -> Image already in allImages. Breaking");
                         addNewestImagesOnly = false;
                         allImagesPresent = true;
                         cursor.close(); // Android Studio suggestion
                         return allImages;
                     } else{
-                        Log.d("Simple-Gallery", allImages.size() + "");
+                        Log.d("HCMUS - GALLERY", allImages.size() + "");
                         if(allImages.size()>1200){
                             addNewestImagesOnly = false;
                             allImagesPresent = true;

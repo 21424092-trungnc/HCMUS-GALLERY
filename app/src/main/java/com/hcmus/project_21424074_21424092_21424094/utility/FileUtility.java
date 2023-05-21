@@ -16,7 +16,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
-
 public class FileUtility {
     public void deleteRecursive(File fileOrDirectory) {
 
@@ -41,14 +40,11 @@ public class FileUtility {
         InputStream in = null;
         OutputStream out = null;
         try {
-
-            //create output directory if it doesn't exist
             File dir = new File (outputPath);
             if (!dir.exists())
             {
                 dir.mkdirs();
             }
-
 
             in = new FileInputStream(inputPath);
             out = new FileOutputStream(outputPath + File.separator +inputFile);
@@ -68,8 +64,6 @@ public class FileUtility {
 
             // delete the original file
             new File(inputPath).delete();
-
-
         }
 
         catch (FileNotFoundException fnfe1) {
@@ -78,21 +72,17 @@ public class FileUtility {
         catch (Exception e) {
             Log.e("tag", e.getMessage());
         }
-
     }
     public void copyFile(String inputPath, String inputFile, String outputPath) {
-
         InputStream in = null;
         OutputStream out = null;
         try {
-
             //create output directory if it doesn't exist
             File dir = new File (outputPath);
             if (!dir.exists())
             {
                 dir.mkdirs();
             }
-
 
             in = new FileInputStream(inputPath + inputFile);
             out = new FileOutputStream(outputPath + inputFile);

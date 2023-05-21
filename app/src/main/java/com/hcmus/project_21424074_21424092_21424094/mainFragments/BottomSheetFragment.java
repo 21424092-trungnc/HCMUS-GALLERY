@@ -12,23 +12,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hcmus.project_21424074_21424092_21424094.R;
-import com.hcmus.project_21424074_21424092_21424094.adapters.SearchRVAdapter;
-import com.hcmus.project_21424074_21424092_21424094.models.SearchRV;
-import com.hcmus.project_21424074_21424092_21424094.utility.IClickListener;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.ArrayList;
 
 public class BottomSheetFragment extends BottomSheetDialogFragment {
-
-    private ArrayList<SearchRV> searchRVArrayList;
-    private IClickListener iClickListener;
-
-    public BottomSheetFragment(ArrayList<SearchRV> searchRVArrayList, IClickListener iClickListener) {
-        this.searchRVArrayList = searchRVArrayList;
-        this.iClickListener = iClickListener;
-    }
+//    private ArrayList<SearchRV> searchRVArrayList;
+//    private IClickListener iClickListener;
+//    public BottomSheetFragment(ArrayList<SearchRV> searchRVArrayList, IClickListener iClickListener) {
+//        this.searchRVArrayList = searchRVArrayList;
+//        this.iClickListener = iClickListener;
+//    }
 
     @NonNull
     @Override
@@ -40,14 +35,14 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
         RecyclerView rcvSearch = view.findViewById(R.id.rcv_search);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         rcvSearch.setLayoutManager(linearLayoutManager);
-        SearchRVAdapter searchRVAdapter = new SearchRVAdapter(searchRVArrayList, getContext(), new IClickListener() {
-            @Override
-            public void clickItem(SearchRV searchRV) {
-                iClickListener.clickItem(searchRV);
-            }
-        });
-
-        rcvSearch.setAdapter(searchRVAdapter);
+//        SearchRVAdapter searchRVAdapter = new SearchRVAdapter(searchRVArrayList, getContext(), new IClickListener() {
+//            @Override
+//            public void clickItem(SearchRV searchRV) {
+//                iClickListener.clickItem(searchRV);
+//            }
+//        });
+//
+//        rcvSearch.setAdapter(searchRVAdapter);
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getContext(),DividerItemDecoration.HORIZONTAL);
         rcvSearch.addItemDecoration(itemDecoration);
         return bottomSheetDialog;
