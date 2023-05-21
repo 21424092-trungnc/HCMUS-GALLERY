@@ -84,7 +84,7 @@ public class MultiSelectImage extends AppCompatActivity implements ListTransInte
 
     private void eventToolBar() {
         toolbar_item_album.inflateMenu(R.menu.menu_multi_select);
-        toolbar_item_album.setTitle("Multi Select");
+        toolbar_item_album.setTitle("Chọn nhiều");
 
         toolbar_item_album.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
